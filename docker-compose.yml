@@ -6,7 +6,9 @@ services:
     ports:
       - "5678:5678"
     volumes:
-      - ./n8n-local-data:/home/node/.n8n  # <--- CAMBIO IMPORTANTE
+      - ./n8n-local-data:/home/node/.n8n 
+      volumes:
+  - /var/run/docker.sock:/var/run/docker.sock# <--- CAMBIO IMPORTANTE
     environment:
       - N8N_HOST=localhost
       - N8N_PORT=5678
